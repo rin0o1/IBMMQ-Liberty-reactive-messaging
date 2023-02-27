@@ -1,9 +1,10 @@
 # IBMMQ-Liberty-reactive-messaging
 
 ### Running the producer
-
+```
 - cd ./app-producer
 - mvn liberty:dev
+```
 
 ### Running the consumer
   - cd ./app-consumer
