@@ -36,4 +36,4 @@ Once both the consumer and producer are running you can produce a message by tri
 ```
   curl http://localhost:9080/app-producer/system/producer
 ```
-If the message is successfully sent to DEV.QUEUE.1, "Message Sent!" should appear in your console. Similarly, a reply "This is a message from the consumer" should be prompted to confirm that the consumer reply has been received and that the reactive messaging flow has succeeded.
+If the message is successfully sent to DEV.QUEUE.1, "Message Sent!" should appear in your console. Similarly, a reply "received (my-topic): This is a message from the consumer from queue DEV.QUEUE.2" should be prompted to confirm that the consumer reply has been received and that the reactive messaging flow has succeeded.
