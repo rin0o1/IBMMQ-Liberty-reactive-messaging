@@ -1,4 +1,4 @@
-# IBMMQ-Liberty-reactive-messaging
+# IBM MQ-Liberty reactive messaging
 
 This project demonstrates how to achieve IBM MQ reactive messaging between two Open Liberty applications that produce/consume messages to/from a queue. The communication between these applications is facilitated by SmallRye for reactive messaging and the AMQP protocol.
 
