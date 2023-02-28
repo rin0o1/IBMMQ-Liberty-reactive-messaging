@@ -18,10 +18,11 @@ The producer is an Open Liberty application that sends a message to DEV.QUEUE.1 
 The SmallRye version used is 4.3.0 which includes in its dependecy tree MicroProfile Reactive Messaging 3.0.
 The microprofile configuration can be found in ./resources/META-INF/macroprofile-config.properties for both the producer and consumer.
 
-The reactive message flow occurs as follow: 
-1- The producer put a message by emitting into the channel 'data-out' which is configured as follow: 
+##The reactive message flow occurs as follow: 
+
+1- The producer puts a message by emitting into the channel 'data-out' which is configured as follow: 
 ```
-mp.messaging.outgoing.data-out.connector=smallrye-amqp
+mp.messaging.outgoing.data-out.connector=smallrye-amqp 
 mp.messaging.outgoing.data-out.address=DEV.QUEUE.1
 mp.messaging.outgoing.data-out.use-anonymous-sender=false
 mp.messaging.outgoing.data-out.capabilities=queue 
@@ -35,7 +36,7 @@ mp.messaging.incoming.data-in.use-anonymous-sender=false
 mp.messaging.incoming.data-in.capabilities=queue
 ```
 
-3- The consumer is replying by putting message into the channel 'data-out' which is configure as follow:
+3- The consumer replyes by putting the reply message into the channel 'data-out' which is configure as follow:
 ```
 mp.messaging.outgoing.data-out.connector=smallrye-amqp
 mp.messaging.outgoing.data-out.address=DEV.QUEUE.2
