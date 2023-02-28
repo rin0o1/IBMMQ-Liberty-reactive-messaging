@@ -16,7 +16,7 @@ To enable communication with the AMQP broker for both the consumer and producer,
 The producer is an Open Liberty application that sends a message to DEV.QUEUE.1 upon triggering its endpoint /app-producer/system/producer. If the consumer is running and configured to listen for incoming messages on the channel DEV.QUEUE.1, it will automatically consume the message. For each  Consumer's incoming message a reply is produced to DEV.QUEUE.2 where the producer is listening for incoming replies. 
 
 The SmallRye version used is 4.3.0 which includes in its dependecy tree MicroProfile Reactive Messaging 3.0.
-The microprofile configuration can be found in ./resources/META-INF/macroprofile-config.properties for both the producer and consumer and it enables the reactive messaging as exaplined below.
+For both the producer and consumer the microprofile configuration that allows reactive messaging can be found in ./resources/META-INF/macroprofile-config.properties.
 
 ### The reactive message flow occurs as follow: 
 
