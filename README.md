@@ -9,7 +9,7 @@ To create a IBM MQ Queue Manager with AMQP enabled, which will be used as AMQP b
 To enable communication with the AMQP broker for both the consumer and producer, the following properties in the resources/META-INF/macroprofile-config.properties file must be set:
 ```
 - amqp-host= your MQ Queue Manager host
-- amqp-port= the port used fro the MQ Queue Manger for AQMP (5672 default)
+- amqp-port= the port used for MQ AMQP (5672 default)
 - amqp-username= username for putting/consuming messages 
 - amqp-password= yourAMQPPassword
 ```
