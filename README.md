@@ -15,7 +15,7 @@ To enable communication with the AMQP broker for both the consumer and producer,
 ```
 
 
-### Producer
+### Running the producer
 The app-producer folder contains all the files needed for the Producer.
 The Producer can be started with the following commands:
 ```
@@ -31,7 +31,7 @@ The consumer can be started with the following commands:
   mvn liberty:dev
 ```
 
-### Put a message from producer
+### Put a message from producer and receive reply from consumer with reactive messaging
 Once both the consumer and producer are running you can produce a message by triggering the following GET endpoint of the producer: 
 ```
   curl http://localhost:9080/app-producer/system/producer
