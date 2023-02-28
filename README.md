@@ -1,14 +1,12 @@
 # IBMMQ-Liberty-reactive-messaging
 
-This project shows how reactive messaging can be achieved between two Open Liberty applications which produce/consume messages to/from a queue.
-The communication between these applications occurs using SmallRye for reactive messaging and the AMQP protocol.
+This project demonstrates how to achieve reactive messaging between two Open Liberty applications that produce and consume messages from a queue. The communication between these applications is facilitated by SmallRye for reactive messaging and the AMQP protocol.
 
-The producer is a Open Liberty application which on triggering its endpoint /app-producer/system/producer will produce a message to DEV.QUEUE.1. If the consumer is running and configured to listening for incoming messages on the channel DEV.QUEUE.1, this message will be automatically consume. 
-For each Consumer's incoming message a reply is produced to DEV.QUEUE.2 where the producer is listening for incoming messages. 
+The producer is an Open Liberty application that sends a message to DEV.QUEUE.1 upon triggering its endpoint /app-producer/system/producer. If the consumer is running and configured to listen for incoming messages on the channel DEV.QUEUE.1, it will automatically consume the message. For each incoming message from the consumer, a reply is produced to DEV.QUEUE.2 where the producer is listening for incoming messages.
 
 To create a IBM MQ Queue Manager with AMQP enabled, which will be used as AMQP broker, you can follow this tutorial: 
 
-You have to configure your AMQP HOST, PORT, USERNAME, and PASSWORD for both consumer and producer by setting these four line within the resources/META-INF/macroprofile-config.properties file:
+To enable communication with the AMQP broker for both the consumer and producer, the following properties in the resources/META-INF/macroprofile-config.properties file must be set:
 ```
 - amqp-host= your MQ Queue Manager host
 - amqp-port= the port used fro the MQ Queue Manger for AQMP (5672 default)
@@ -38,4 +36,4 @@ Once both the consumer and producer are running you can produce a message by tri
 ```
   curl http://localhost:9080/app-producer/system/producer
 ```
-If this message is sent to DEV.QUEUE.1 successful "Message Sent!" should appear in your console. In the same way, a reply "This is a message from consumer" should be promped to prove that the reactive messaging flow worked correctly.
+If the message is successfully sent to DEV.QUEUE.1, "Message Sent!" should appear in your console. Similarly, a reply "This is a message from the consumer" should be prompted to confirm that the consumer reply has been received and that the reactive messaging flow has succeeded.
