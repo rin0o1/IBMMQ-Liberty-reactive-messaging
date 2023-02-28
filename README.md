@@ -4,7 +4,7 @@ This project demonstrates how to achieve reactive messaging between two Open Lib
 
 The producer is an Open Liberty application that sends a message to DEV.QUEUE.1 upon triggering its endpoint /app-producer/system/producer. If the consumer is running and configured to listen for incoming messages on the channel DEV.QUEUE.1, it will automatically consume the message. For each incoming message from the consumer, a reply is produced to DEV.QUEUE.2 where the producer is listening for incoming messages.
 
-To create a IBM MQ Queue Manager with AMQP enabled, which will be used as AMQP broker, you can follow this tutorial: 
+To create and setup a IBM MQ Queue Manager with AMQP enabled, which will be used as AMQP broker, you can follow this tutorial: 
 https://developer.ibm.com/tutorials/mq-setting-up-amqp-with-mq/?mhsrc=ibmsearch_a&mhq=MQ%20AMQP
 
 
