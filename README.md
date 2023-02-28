@@ -2,7 +2,7 @@
 
 This project demonstrates how to achieve IBM MQ reactive messaging between two Open Liberty applications that produce/consume messages to/from a queue. The communication between these applications is facilitated by SmallRye for reactive messaging and the AMQP protocol.
 
-To create and setup a IBM MQ Queue Manager with AMQP enabled, which will be used as AMQP broker, you can follow this tutorial: 
+To create and setup an IBM MQ Queue Manager with AMQP enabled, which will be used as AMQP broker, you can follow this tutorial: 
 https://developer.ibm.com/tutorials/mq-setting-up-amqp-with-mq/?mhsrc=ibmsearch_a&mhq=MQ%20AMQP
 
 To enable communication with the AMQP broker for both the consumer and producer, the following properties in the resources/META-INF/macroprofile-config.properties file must be set:
@@ -13,7 +13,7 @@ To enable communication with the AMQP broker for both the consumer and producer,
 - amqp-password= yourAMQPPassword
 ```
 
-The producer is an Open Liberty application that sends a message to DEV.QUEUE.1 upon triggering its endpoint /app-producer/system/producer. If the consumer is running and configured to listen for incoming messages on the channel DEV.QUEUE.1, it will automatically consume the message. For each  Consumer's incoming message a reply is produced to DEV.QUEUE.2 where the producer is listening for incoming messages. 
+The producer is an Open Liberty application that sends a message to DEV.QUEUE.1 upon triggering its endpoint /app-producer/system/producer. If the consumer is running and configured to listen for incoming messages on the channel DEV.QUEUE.1, it will automatically consume the message. For each  Consumer's incoming message a reply is produced to DEV.QUEUE.2 where the producer is listening for incoming replies. 
 
 The SmallRye version used is 4.3.0 which includes in its dependecy tree MicroProfile Reactive Messaging 3.0.
 The microprofile configuration can be found in ./resources/META-INF/macroprofile-config.properties for both the producer and consumer and it enables the reactive messaging as exaplined below.
@@ -36,7 +36,7 @@ mp.messaging.incoming.data-in.use-anonymous-sender=false
 mp.messaging.incoming.data-in.capabilities=queue
 ```
 
-3- The consumer replyes by putting the reply message into the channel 'data-out' which is configure as follow:
+3- The consumer replies by putting the reply message into the channel 'data-out' which is configure as follow:
 ```
 mp.messaging.outgoing.data-out.connector=smallrye-amqp
 mp.messaging.outgoing.data-out.address=DEV.QUEUE.2
