@@ -31,7 +31,7 @@ The consumer can be started with the following commands:
   mvn liberty:dev
 ```
 
-### Put a message from producer and receive reply from consumer with reactive messaging
+### Put a message from the producer and receive a reply from the consumer with reactive messaging
 Once both the consumer and producer are running you can produce a message by triggering the following GET endpoint of the producer: 
 ```
   curl http://localhost:9080/app-producer/system/producer
